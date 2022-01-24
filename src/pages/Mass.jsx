@@ -8,13 +8,14 @@ export class Mass extends Component {
 
     this.state = { 
       input: '',
-      select: '',
+      select: 'pounds',
       convertMass: '',
       numPharse: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
+    this.massConvertBtn = this.massConvertBtn.bind(this);
   }
 
   handleChange(e) {
@@ -31,8 +32,34 @@ export class Mass extends Component {
     });
   }
 
-  render() {
+  massConvertBtn() {
     const { select, input } = this.state;
+
+    if(select === 'pounds') {
+      const saveNum = Number(input);
+      const calcPound = saveNum * 0.453592;
+      const fixed = calcPound.toFixed(2);
+      return this.setState({
+        convertMass: fixed,
+        numPharse: saveNum,
+        input: '',
+      });
+
+    } else if(select === 'kilogram') {
+      const saveNum = Number(input);
+      const calcKilo = saveNum * 2.20462;
+      const fixed = calcKilo.toFixed(2);
+      return this.setState({
+        convertMass: fixed,
+        numPharse: saveNum,
+        input: '',
+      });
+
+    }
+  }
+
+  render() {
+    const { select, input, numPharse, convertMass } = this.state;
     return (
       <body>
         <section>
@@ -43,7 +70,10 @@ export class Mass extends Component {
           </div>
           <div className="mass-dinamic-pharse">
             <span className="mass-pharse">
-              Ainda sem lógica
+              {select === 'pounds' ?
+              `${numPharse}lb equivalem à ${convertMass}Kg *(valor aproximado)*` :
+              `${numPharse}Kg equivalem à ${convertMass}lb *(valor aproximado!)*`
+              }
             </span>
           </div>
           <div className="input-box">
@@ -55,8 +85,8 @@ export class Mass extends Component {
                 value={ select }
                 onChange={ this.handleChangeSelect }
               >
-                <option value="kilogram">Kilograms</option>
-                <option value="pounds">Pounds</option>
+                <option value="kilogram">Quilogramas</option>
+                <option value="pounds">Libras</option>
               </select>
             </label>
             <label htmlFor="input">
@@ -73,6 +103,7 @@ export class Mass extends Component {
           <div className="mass-buttons-box">
             <button
               type="button"
+              onClick={ this.massConvertBtn }
             >
               Converter
             </button>
