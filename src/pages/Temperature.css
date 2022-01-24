@@ -10,7 +10,7 @@
 
 /* Pharse Classes */
 
-.temeperature-dinamic-pharse {
+.temperature-dinamic-pharse {
   border: 1px solid black;
   width: 100%;
   height: 15%;
@@ -20,7 +20,6 @@
 }
 
 /* Inputs Classes */
-
 
 .input-box {
   border: 1px solid black;
@@ -34,7 +33,7 @@
 
 /* Buttons classes */
 
-.temeperature-buttons-box {
+.temperature-buttons-box {
   border: 1px solid black;
   width: 100%;
   height: 15%;
@@ -43,6 +42,8 @@
   align-items: center;
   flex-direction: column;
 }
+
+/* Footer Classes */
 
 .home-footer {
   border: 1px solid lime;

@@ -70,7 +70,7 @@ class Temperature extends Component {
               Temperature
             </strong>
           </div>
-          <div className="temeperature-dinamic-pharse">
+          <div className="temperature-dinamic-pharse">
             <span className="temperature-pharse">
               { select === 'celsius' ? 
               `${numPharse}°C equivalem à ${convertTemp} °F` : `${numPharse}°F equivalem à ${convertTemp}°C`
@@ -82,7 +82,7 @@ class Temperature extends Component {
               <select
                 name="select"
                 id="select"
-                className='temeperature-select'
+                className='temperature-select'
                 value={ select }
                 onChange={ this.handleChangeSelect }
               >
@@ -90,20 +90,20 @@ class Temperature extends Component {
                 <option value="fahrenheit">Fahrenheit</option>
               </select>
             </label>
-            <label htmlFor="temperature-input">
+            <label htmlFor="input">
               <input
                 type="number"
-                name="temperature-input"
-                className='temeperature-input'
-                id="temperature-input"
+                name="input"
+                className='temperature-input'
+                id="input"
                 value={ input }
                 onChange={ this.handleChange }
               />
             </label>
           </div>
-          <div className="temeperature-buttons-box">
+          <div className="temperature-buttons-box">
             <button
-              className='temeperature-convert-button'
+              className='temperature-convert-button'
               type='button'
               onClick={ this.convertButton }
             >

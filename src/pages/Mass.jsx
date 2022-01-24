@@ -13,6 +13,22 @@ export class Mass extends Component {
       numPharse: '',
     };
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeSelect = this.handleChangeSelect.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  handleChangeSelect(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+      convertMass: '',
+      numPharse: '',
+    });
   }
 
   render() {
@@ -37,18 +53,20 @@ export class Mass extends Component {
                 id="select"
                 className='mass-select'
                 value={ select }
+                onChange={ this.handleChangeSelect }
               >
                 <option value="kilogram">Kilograms</option>
                 <option value="pounds">Pounds</option>
               </select>
             </label>
-            <label htmlFor="mass-input">
+            <label htmlFor="input">
               <input
                 type="number"
-                name="mass-input"
-                id="mass-input"
+                name="input"
+                id="input"
                 className="mass-input"
                 value={ input }
+                onChange={ this.handleChange }
               />
             </label>
           </div>
