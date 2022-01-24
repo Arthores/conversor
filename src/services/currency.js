@@ -1,7 +1,6 @@
-const awesomeApiALL = async () => {
+export const awesomeApiCurrency = async () => {
   const fetchALL = await fetch('https://economia.awesomeapi.com.br/json/all');
   const jsonResponse = await fetchALL.json();
-  return Object.entries(jsonResponse);
+  const objetcJson = Object.keys(jsonResponse);
+  return objetcJson;
 };
-
-export default awesomeApiALL;
