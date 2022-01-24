@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Mass.css';
 
-export class Mass extends Component {
+class Mass extends Component {
   constructor() {
     super();
 

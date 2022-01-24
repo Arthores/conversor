@@ -20,6 +20,13 @@ class Home extends Component {
             </button>
           </Link>
         </div>
+        <div>
+          <Link to='coin' >
+            <button type="button">
+              Moedas
+            </button>
+          </Link>
+        </div>
       </body>
     );
   }

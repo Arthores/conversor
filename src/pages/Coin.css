@@ -1,6 +1,6 @@
 /* Title Classes */
 
-.mass-title-box {  
+.coin-title-box {  
   border: 1px solid black;
   width: 100%;
   height: 30%;
@@ -12,7 +12,7 @@
 
 /* Pharse Classes */
 
-.mass-dinamic-pharse {
+.coin-dinamic-pharse {
   border: 1px solid black;
   width: 100%;
   height: 15%;
@@ -35,7 +35,7 @@
 
 /* Buttons Classes */
 
-.mass-buttons-box {
+.coin-buttons-box {
   border: 1px solid black;
   width: 100%;
   height: 15%;
