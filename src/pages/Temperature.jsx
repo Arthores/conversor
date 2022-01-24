@@ -11,7 +11,7 @@ class Temperature extends Component {
       input: '',
       numPharse: '',
       select: 'fahrenheit',
-      convert: '',
+      convertTemp: '',
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +28,7 @@ class Temperature extends Component {
   handleChangeSelect(e) {
     this.setState({
       [e.target.name]: e.target.value,
-      convert: '',
+      convertTemp: '',
       numPharse: '',
     });
   }
@@ -43,7 +43,7 @@ class Temperature extends Component {
       const fixed = calc.toFixed(2);
       return this.setState({
         numPharse: saveNum,
-        convert: fixed,
+        convertTemp: fixed,
         input: '',
       });
       // alert('ok')
@@ -53,14 +53,14 @@ class Temperature extends Component {
       const fixed = calc.toFixed(2);
       return this.setState({
         numPharse: saveNum,
-        convert: fixed,
+        convertTemp: fixed,
         input: '',
       });
     }
   };
 
   render() {
-    const { input, select, convert, numPharse } = this.state;
+    const { input, select, convertTemp, numPharse } = this.state;
 
     return(
       <body>
@@ -73,7 +73,7 @@ class Temperature extends Component {
           <div className="temeperature-dinamic-pharse">
             <span className="temperature-pharse">
               { select === 'celsius' ? 
-              `${numPharse}°C equivalem à ${convert} °F` : `${numPharse}°F equivalem à ${convert }°C`
+              `${numPharse}°C equivalem à ${convertTemp} °F` : `${numPharse}°F equivalem à ${convertTemp}°C`
                 }
             </span>
           </div>
@@ -90,12 +90,12 @@ class Temperature extends Component {
                 <option value="fahrenheit">Fahrenheit</option>
               </select>
             </label>
-            <label htmlFor="input">
+            <label htmlFor="temperature-input">
               <input
                 type="number"
-                name="input"
+                name="temperature-input"
                 className='temeperature-input'
-                id="input"
+                id="temperature-input"
                 value={ input }
                 onChange={ this.handleChange }
               />

@@ -13,6 +13,13 @@ class Home extends Component {
             </button>
           </Link>
         </div>
+        <div>
+          <Link to='mass' >
+            <button type="button">
+              Massa
+            </button>
+          </Link>
+        </div>
       </body>
     );
   }
