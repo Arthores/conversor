@@ -1,0 +1,14 @@
+/* Base Structure */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  border: 1px solid black;
+  width: 550px;
+  height: 500px;
+}
