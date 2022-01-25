@@ -8,59 +8,72 @@ class Temperature extends Component {
     super();
 
     this.state = {
-      input: '',
+      temperatureInput: '',
+      temperatureSelect: 'fahrenheit',
       numPharse: '',
-      select: 'fahrenheit',
-      convertTemp: '',
-    }
+      convertedTemp: '',
+      pharse: false,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.convertButton = this.convertButton.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
-  }
+    this.pharseShow = this.pharseShow.bind(this);
+  };
 
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
   handleChangeSelect(e) {
     this.setState({
       [e.target.name]: e.target.value,
       convertTemp: '',
       numPharse: '',
+      pharse: false,
     });
-  }
+  };
 
   convertButton() {
 
-    const { select, input } = this.state;
+    const { temperatureSelect, temperatureInput } = this.state;
 
-    if(select === 'fahrenheit') {
-      const saveNum = Number(input);
-      const calc = (saveNum - 32) / 1.8;
+    if(temperatureSelect === 'fahrenheit') {
+      const calc = (Number(temperatureInput) - 32) / 1.8;
       const fixed = calc.toFixed(2);
       return this.setState({
-        numPharse: saveNum,
-        convertTemp: fixed,
-        input: '',
+        numPharse: Number(temperatureInput),
+        convertedTemp: fixed,
+        temperatureInput: '',
+        pharse: true,
       });
-      // alert('ok')
-    } else if (select === 'celsius') {
-      const saveNum = Number(input);
-      const calc = (saveNum * 1.8) + 32;
+      
+    } else if (temperatureSelect === 'celsius') {
+      const calc = (Number(temperatureInput) * 1.8) + 32;
       const fixed = calc.toFixed(2);
       return this.setState({
-        numPharse: saveNum,
-        convertTemp: fixed,
-        input: '',
+        numPharse: Number(temperatureInput),
+        convertedTemp: fixed,
+        temperatureInput: '',
+        pharse: true,
       });
     }
   };
 
+  pharseShow() {
+    const { pharse, temperatureSelect, numPharse, convertedTemp } = this.state;
+
+    if(pharse === true && temperatureSelect === 'celsius') {
+      return `${numPharse}°C equivalem à ${convertedTemp} °F`
+    } else if(pharse === true && temperatureSelect === 'fahrenheit') {
+      return `${numPharse}°F equivalem à ${convertedTemp}°C`
+    }
+  };
+
   render() {
-    const { input, select, convertTemp, numPharse } = this.state;
+    const { temperatureInput, temperatureSelect } = this.state;
 
     return(
       <body>
@@ -72,31 +85,29 @@ class Temperature extends Component {
           </div>
           <div className="temperature-dinamic-pharse">
             <span className="temperature-pharse">
-              { select === 'celsius' ? 
-              `${numPharse}°C equivalem à ${convertTemp} °F` : `${numPharse}°F equivalem à ${convertTemp}°C`
-                }
+              { this.pharseShow() }
             </span>
           </div>
           <div className="input-box">
-            <label htmlFor="select">
+            <label htmlFor="temperatureSelect">
               <select
-                name="select"
-                id="select"
+                name="temperatureSelect"
+                id="temperatureSelect"
                 className='temperature-select'
-                value={ select }
+                value={ temperatureSelect }
                 onChange={ this.handleChangeSelect }
               >
                 <option value="celsius">Celsisus</option>
                 <option value="fahrenheit">Fahrenheit</option>
               </select>
             </label>
-            <label htmlFor="input">
+            <label htmlFor="temperatureInput">
               <input
                 type="number"
-                name="input"
+                name="temperatureInput"
                 className='temperature-input'
-                id="input"
-                value={ input }
+                id="temperatureInput"
+                value={ temperatureInput }
                 onChange={ this.handleChange }
               />
             </label>

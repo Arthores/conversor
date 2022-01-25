@@ -81,6 +81,11 @@ class Height extends Component {
               Altura
             </strong>
           </div>
+          <div className="height-dinamic-pharse">
+            <span className="height-pharse">
+              { this.pharseShow() }
+            </span>
+          </div>
           <div className="input-box">
             <label htmlFor="heightSelect">
               <select
@@ -112,11 +117,6 @@ class Height extends Component {
             >
               Converter
             </button>
-          </div>
-          <div className="height-dinamic-pharse">
-            <span className="height-pharse">
-              { this.pharseShow() }
-            </span>
           </div>
           <div className="home-footer">
             <Link to="/" className='home-link'>
