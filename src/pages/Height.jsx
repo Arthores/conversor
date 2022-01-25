@@ -11,11 +11,13 @@ class Height extends Component {
       heightInput: '',
       convertedNum: '',
       pharseNum: '',
+      pharse: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
     this.convertLogic = this.convertLogic.bind(this);
+    this.pharseShow = this.pharseShow.bind(this);
   }
 
   handleChange(e) {
@@ -23,6 +25,7 @@ class Height extends Component {
       [e.target.name]: e.target.value,
     });
   }
+    
 
   handleChangeSelect(e) {
     this.setState({
@@ -30,35 +33,46 @@ class Height extends Component {
       heightInput: '',
       pharseNum: '',
       convertedNum: '',
+      pharse: false,
     });
   }
 
   convertLogic() {
     const { heightInput, heightSelect } = this.state;
-
+    
     if(heightSelect === 'feets') {
-      const saveNum = Number(heightInput);
-      const feetCalc = saveNum * 0.3048;
+      const feetCalc = Number(heightInput) * 0.3048;
       const fixedResult = feetCalc.toFixed(2);
       this.setState({
         pharseNum: heightInput,
         convertedNum: fixedResult,
         heightInput: '',
+        pharse: true,
       })
     } else if(heightSelect === 'meters') {
-      const saveNum = Number(heightInput);
-      const metersCalc = saveNum * 3.28084;
+      const metersCalc = Number(heightInput) * 3.28084;
       const fixedResult = metersCalc.toFixed(2);
       this.setState({
         pharseNum: heightInput,
         convertedNum: fixedResult,
         heightInput: '',
+        pharse: true,
       })
+    }
+  }
+  
+  pharseShow() {
+    const { pharse, heightSelect, pharseNum, convertedNum } = this.state;
+
+    if(pharse === true && heightSelect === 'feets') {
+      return `${pharseNum}Ft equivalem à ${convertedNum}m `
+    } else if(pharse === true && heightSelect === 'meters') {
+      return `${pharseNum}m equivalem à ${convertedNum}Ft `
     }
   }
 
   render() {
-    const { heightSelect, heightInput, convertedNum } = this.state;
+    const { heightSelect, heightInput } = this.state;
     return (
       <body>
         <section>
@@ -101,7 +115,7 @@ class Height extends Component {
           </div>
           <div className="height-dinamic-pharse">
             <span className="height-pharse">
-              { convertedNum }
+              { this.pharseShow() }
             </span>
           </div>
           <div className="home-footer">
