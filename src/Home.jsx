@@ -6,34 +6,40 @@ class Home extends Component {
   render() {
     return (
       <body>
-        <div>
-          <Link to='temperature' >
-            <button type="button">
-              Temeperatura
-            </button>
-          </Link>
-        </div>
-        <div>
-          <Link to='mass' >
-            <button type="button">
-              Massa
-            </button>
-          </Link>
-        </div>
-        <div>
-          <Link to='coin' >
-            <button type="button">
-              Moedas
-            </button>
-          </Link>
-        </div>
-        <div>
-          <Link to='height' >
-            <button type="button">
-              Altura
-            </button>
-          </Link>
-        </div>
+        <section>
+          <div className="home-title-box">
+            <strong className="home-title">
+              Convertor
+            </strong>
+          </div>
+          <div className="home-links-box">          
+            <Link to='temperature' >
+              <button type="button" className='temperature-link' >
+                Temperatura
+              </button>
+            </Link>
+            <Link to='mass' >
+              <button type="button" className='mass-link' >
+                Massa
+              </button>
+            </Link>
+            <Link to='coin' >
+              <button type="button" className='coin-link' >
+                Moedas
+              </button>
+            </Link>
+            <Link to='height' >
+              <button type="button" className='height-link' >
+                Altura
+              </button>
+            </Link>
+          </div>
+          <div className="about-footer">
+            <Link to="/about" className='about-link'>
+              About
+            </Link>
+          </div>
+        </section>
       </body>
     );
   }
