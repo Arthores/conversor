@@ -168,7 +168,7 @@ section {
   color: #FF0043;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 414px) {
   * {
     font-family: 'Dongle', sans-serif;
     font-size: 15px;
