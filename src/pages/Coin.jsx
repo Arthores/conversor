@@ -18,6 +18,7 @@ class Coin extends Component {
     this.selectRenderizer = this.selectRenderizer.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
+    // this.convertToBRL = this.convertToBRL.bind(this);
   }
 
   componentDidMount = async () => {
@@ -94,6 +95,7 @@ class Coin extends Component {
           <div className="coin-buttons-box">
             <button
               type="button"
+              // onClick={ this.convertToBRL }
             >
               Converter
             </button>

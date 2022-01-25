@@ -1,0 +1,57 @@
+/* Title Classes */
+
+.height-title-box {  
+  border: 1px solid black;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Pharse Classes */
+
+.height-dinamic-pharse {
+  border: 1px solid black;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Input Classes */
+
+.input-box {
+  border: 1px solid black;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Buttons Classes */
+
+.height-buttons-box {
+  border: 1px solid black;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Footer Classes */
+
+.home-footer {
+  border: 1px solid lime;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

@@ -27,6 +27,13 @@ class Home extends Component {
             </button>
           </Link>
         </div>
+        <div>
+          <Link to='height' >
+            <button type="button">
+              Altura
+            </button>
+          </Link>
+        </div>
       </body>
     );
   }

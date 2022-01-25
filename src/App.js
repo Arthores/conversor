@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import Coin from './pages/Coin';
-import Mass from './pages/Mass';
-import NoFound from './pages/NoFound';
 import Temperature from './pages/Temperature';
+import Mass from './pages/Mass';
+import Coin from './pages/Coin';
+import Height from './pages/Height';
+import NoFound from './pages/NoFound';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Route path="temperature" element={ <Temperature /> } />
         <Route path="mass" element={ <Mass /> } />
         <Route path="coin" element={ <Coin /> } />
+        <Route path="height" element={ <Height /> } />
         <Route path="*" element={ <NoFound /> } />
       </Routes>
     );
