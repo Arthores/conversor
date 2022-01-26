@@ -9,7 +9,7 @@ class Home extends Component {
         <section>
           <div className="home-title-box">
             <strong className="home-title">
-              Convertor
+              Conversor
             </strong>
           </div>
           <div className="home-links-box">          
@@ -27,7 +27,7 @@ class Home extends Component {
               <button
                 type="button"
                 className='coin-link'
-                onClick={() => alert('ops estamos com um pequeno problema neste conversor') }
+                onClick={() => alert('Ops! Estamos com um pequeno problema neste conversor. Me desculpe.') }
               >
                 Moedas
               </button>

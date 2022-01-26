@@ -5,8 +5,8 @@ import Temperature from './pages/Temperature';
 import Mass from './pages/Mass';
 import Coin from './pages/Coin';
 import Height from './pages/Height';
-import NoFound from './pages/NoFound';
 import About from './pages/About';
+import NoFound from './pages/NoFound';
 
 class App extends Component {
   render() {

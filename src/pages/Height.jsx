@@ -104,6 +104,7 @@ class Height extends Component {
                 type="number"
                 name="heightInput"
                 id="heightInput"
+                placeholder='Insira um valor'
                 className="height-input"
                 value={ heightInput }
                 onChange={ this.handleChange }

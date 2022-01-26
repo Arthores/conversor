@@ -80,7 +80,7 @@ class Temperature extends Component {
         <section>
           <div className="temperature-title-box">
             <strong className='temperature-title'>
-              Temperature
+              Temperatura
             </strong>
           </div>
           <div className="temperature-dinamic-pharse">

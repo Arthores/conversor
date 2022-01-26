@@ -105,6 +105,7 @@ class Mass extends Component {
                 type="number"
                 name="massInput"
                 id="massInput"
+                placeholder='Insira um valor'
                 className="mass-input"
                 value={ massInput }
                 onChange={ this.handleChange }
