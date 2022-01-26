@@ -77,7 +77,7 @@ class Height extends Component {
       <body>
         <section>
         <div className="height-title-box">
-            <strong>
+            <strong className='height-title'>
               Altura
             </strong>
           </div>
@@ -91,7 +91,7 @@ class Height extends Component {
               <select
                 name="heightSelect"
                 id="heightSelect"
-                className="heightSelect"
+                className="height-select"
                 value={ heightSelect }
                 onChange={ this.handleChangeSelect }
               >
@@ -104,7 +104,7 @@ class Height extends Component {
                 type="number"
                 name="heightInput"
                 id="heightInput"
-                className="heightInput"
+                className="height-input"
                 value={ heightInput }
                 onChange={ this.handleChange }
               />
@@ -112,8 +112,10 @@ class Height extends Component {
           </div>
           <div className="height-buttons-box">
             <button
+              className='height-convert-button'
               type='button'
               onClick={ this.convertLogic }
+              disabled={heightInput === '' ? true : false}
             >
               Converter
             </button>

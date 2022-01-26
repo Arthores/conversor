@@ -1,19 +1,22 @@
 /* Title Classes */
 
 .mass-title-box {  
-  border: 1px solid black;
   width: 100%;
   height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.mass-title {
+  font-size: 40px;
+  color: #FFFFFF;
 }
 
 /* Pharse Classes */
 
 .mass-dinamic-pharse {
-  border: 1px solid black;
   width: 100%;
   height: 15%;
   display: flex;
@@ -21,10 +24,14 @@
   align-items: center;
 }
 
+.mass-pharse {
+  font-size: 32px;
+  color: #ff0043;
+}
+
 /* Input Classes */
 
 .input-box {
-  border: 1px solid black;
   width: 100%;
   height: 30%;
   display: flex;
@@ -33,22 +40,73 @@
   flex-direction: column;
 }
 
+.mass-select {
+  font-size: 25px;
+  width: 200px;
+  height: 35px;
+  color: #000000;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #7c7c7c;
+}
+
+.mass-input {
+  width: 200px;
+  /* padding: 10px; */
+  font-size: 25px;
+  background: none;
+  border: 0;
+  outline: transparent;
+  border-bottom: 1px solid #7e7c7c;
+  transition: width ease-out 400ms;
+}
+
+.mass-input:focus {
+  width: 220px;
+  border-bottom: 1px solid #ff0043;
+  caret-color: #FFFFFF;
+  color:#ff0043;
+}
+
+option {
+  color: #000000;
+  font-size: 25px;
+}
+
 /* Buttons Classes */
 
 .mass-buttons-box {
-  border: 1px solid black;
   width: 100%;
   height: 15%;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.mass-convert-button {
+  width: 120px;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #000000;
+  transition: ease-out 100ms;
+}
+
+.mass-convert-button:disabled {
+  cursor: not-allowed;
+}
+
+.mass-convert-button:hover {
+  background-color: #FF0043;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
 /* Footer Classes */
 
 .home-footer {
-  border: 1px solid lime;
   width: 100%;
   height: 8%;
   display: flex;

@@ -78,8 +78,8 @@ class Mass extends Component {
       <body>
         <section>
         <div className="mass-title-box">
-            <strong>
-              Mass
+            <strong className='mass-title'>
+              Massa
             </strong>
           </div>
           <div className="mass-dinamic-pharse">
@@ -113,8 +113,10 @@ class Mass extends Component {
           </div>
           <div className="mass-buttons-box">
             <button
+              className='mass-convert-button'
               type="button"
               onClick={ this.massConvertBtn }
+              disabled={massInput === '' ? true : false}
             >
               Converter
             </button>

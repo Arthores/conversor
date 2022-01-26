@@ -167,6 +167,36 @@ section {
   color: #FF0043;
 }
 
+/* Global Home Footer Classes */
+
+.home-footer {
+  width: 80%;
+  height: 9%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.home-link {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: #FFFFFF;
+  color: #191919;
+  font-size: 20px;
+  text-decoration: inherit;
+  border-radius: 30px;
+  transition: ease-in 300ms;
+}
+
+.home-link:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #FF0043;
+  color: #FF0043;
+}
+
 @media (max-width: 414px) {
   * {
     font-family: 'Dongle', sans-serif;
