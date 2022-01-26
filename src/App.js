@@ -6,6 +6,7 @@ import Mass from './pages/Mass';
 import Coin from './pages/Coin';
 import Height from './pages/Height';
 import NoFound from './pages/NoFound';
+import About from './pages/About';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <Route path="mass" element={ <Mass /> } />
         <Route path="coin" element={ <Coin /> } />
         <Route path="height" element={ <Height /> } />
+        <Route path="about" element={ <About /> } />
         <Route path="*" element={ <NoFound /> } />
       </Routes>
     );

@@ -23,8 +23,12 @@ class Home extends Component {
                 Massa
               </button>
             </Link>
-            <Link to='coin' >
-              <button type="button" className='coin-link' >
+            <Link to='' >
+              <button
+                type="button"
+                className='coin-link'
+                onClick={() => alert('ops estamos com um pequeno problema neste conversor') }
+              >
                 Moedas
               </button>
             </Link>
