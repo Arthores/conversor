@@ -71,7 +71,7 @@ class Temperature extends Component {
       return `${numPharse}°F equivalem à ${convertedTemp}°C`
     }
   };
-
+  
   render() {
     const { temperatureInput, temperatureSelect } = this.state;
 
@@ -79,7 +79,7 @@ class Temperature extends Component {
       <body>
         <section>
           <div className="temperature-title-box">
-            <strong>
+            <strong className='temperature-title'>
               Temperature
             </strong>
           </div>
@@ -96,7 +96,7 @@ class Temperature extends Component {
                 className='temperature-select'
                 value={ temperatureSelect }
                 onChange={ this.handleChangeSelect }
-              >
+                >
                 <option value="celsius">Celsisus</option>
                 <option value="fahrenheit">Fahrenheit</option>
               </select>
@@ -105,6 +105,7 @@ class Temperature extends Component {
               <input
                 type="number"
                 name="temperatureInput"
+                placeholder='Insira um valor'
                 className='temperature-input'
                 id="temperatureInput"
                 value={ temperatureInput }
@@ -117,6 +118,8 @@ class Temperature extends Component {
               className='temperature-convert-button'
               type='button'
               onClick={ this.convertButton }
+              disabled={temperatureInput === '' ? true : false}
+
             >
               Converter
             </button>

@@ -1,55 +1,137 @@
+/* Title classes */
+
 .temperature-title-box {  
-  border: 1px solid black;
   width: 100%;
   height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.temperature-title {
+  color: #FFFFFF;
+  font-size: 40px;
 }
 
 /* Pharse Classes */
 
 .temperature-dinamic-pharse {
-  border: 1px solid black;
   width: 100%;
   height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.temperature-pharse {
+  font-size: 32px;
+  color: #ff0043;
 }
 
 /* Inputs Classes */
 
 .input-box {
-  border: 1px solid black;
   width: 100%;
-  height: 30%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.temperature-select {
+  font-size: 25px;
+  width: 200px;
+  height: 35px;
+  color: #000000;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #7c7c7c;
+}
+
+
+
+.temperature-input {
+  width: 200px;
+  /* padding: 10px; */
+  font-size: 25px;
+  background: none;
+  border: 0;
+  outline: transparent;
+  border-bottom: 1px solid #7e7c7c;
+  transition: width ease-out 400ms;
+}
+
+.temperature-input:focus {
+  width: 220px;
+  border-bottom: 1px solid #ff0043;
+  caret-color: #FFFFFF;
+  color:#ff0043;
+}
+
+option {
+  color: #000000;
+  font-size: 25px;
 }
 
 /* Buttons classes */
 
 .temperature-buttons-box {
-  border: 1px solid black;
   width: 100%;
   height: 15%;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.temperature-convert-button {
+  width: 120px;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #000000;
+  transition: ease-out 100ms;
+}
+
+.temperature-convert-button:disabled {
+  cursor: not-allowed;
+}
+
+.temperature-convert-button:hover {
+  background-color: #FF0043;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
 /* Footer Classes */
 
 .home-footer {
-  border: 1px solid lime;
-  width: 100%;
-  height: 8%;
+  width: 80%;
+  height: 9%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.home-link {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  padding: 10px;
+  background: #FFFFFF;
+  color: #191919;
+  font-size: 20px;
+  text-decoration: inherit;
+  border-radius: 30px;
+  transition: ease-in 300ms;
+}
+
+.home-link:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #FF0043;
+  color: #FF0043;
 }

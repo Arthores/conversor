@@ -22,7 +22,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 1px solid black; */
   border-radius: 25px;
   background: #191919;
 }
@@ -64,7 +63,7 @@ section {
   color: #FFFFFF;
   cursor: pointer;
   font-size: 25px;
-  transition: transform ease-out 300ms;
+  transition: ease-out 200ms;
   background: #FF0043;
   border: 1.5px solid #FFFFFF;
 }
@@ -84,7 +83,7 @@ section {
   color: #FFFFFF;
   cursor: pointer;
   font-size: 25px;
-  transition: transform ease-out 300ms;
+  transition: ease-out 200ms;
   background: #FF0043;
   border: 1.5px solid #FFFFFF;
 }
@@ -104,7 +103,7 @@ section {
   color: #FFFFFF;
   cursor: pointer;
   font-size: 25px;
-  transition: transform ease-out 300ms;
+  transition: ease-out 200ms;
   background: #FF0043;
   border: 1.5px solid #FFFFFF;
 }
@@ -124,7 +123,7 @@ section {
   color: #FFFFFF;
   cursor: pointer;
   font-size: 25px;
-  transition: transform ease-out 300ms;
+  transition: ease-out 200ms;
   background: #FF0043;
   border: 1.5px solid #FFFFFF;
 }
