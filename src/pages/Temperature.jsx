@@ -19,6 +19,7 @@ class Temperature extends Component {
     this.convertButton = this.convertButton.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
     this.pharseShow = this.pharseShow.bind(this);
+    this.disabled = this.disabled.bind(this);
   };
 
   handleChange(e) {
@@ -40,7 +41,7 @@ class Temperature extends Component {
 
     const { temperatureSelect, temperatureInput } = this.state;
 
-    if(temperatureSelect === 'fahrenheit') {
+    if (temperatureSelect === 'fahrenheit') {
       const calc = (Number(temperatureInput) - 32) / 1.8;
       const fixed = calc.toFixed(2);
       return this.setState({
@@ -48,6 +49,7 @@ class Temperature extends Component {
         convertedTemp: fixed,
         temperatureInput: '',
         pharse: true,
+        disabled: true,
       });
       
     } else if (temperatureSelect === 'celsius') {
@@ -58,24 +60,31 @@ class Temperature extends Component {
         convertedTemp: fixed,
         temperatureInput: '',
         pharse: true,
+        disabled: true,
       });
     }
-  };
+};
 
   pharseShow() {
     const { pharse, temperatureSelect, numPharse, convertedTemp } = this.state;
 
-    if(pharse === true && temperatureSelect === 'celsius') {
+    if (pharse === true && temperatureSelect === 'celsius') {
       return `${numPharse}°C equivalem à ${convertedTemp} °F`
-    } else if(pharse === true && temperatureSelect === 'fahrenheit') {
+    } else if (pharse === true && temperatureSelect === 'fahrenheit') {
       return `${numPharse}°F equivalem à ${convertedTemp}°C`
     }
-  };
-  
+};
+
+  disabled() {
+    const { temperatureInput } = this.state;
+
+    return temperatureInput === '' ? true : false
+  }
+
   render() {
     const { temperatureInput, temperatureSelect } = this.state;
 
-    return(
+    return (
       <body>
         <section>
           <div className="temperature-title-box">
@@ -85,7 +94,7 @@ class Temperature extends Component {
           </div>
           <div className="temperature-dinamic-pharse">
             <span className="temperature-pharse">
-              { this.pharseShow() }
+              {this.pharseShow()}
             </span>
           </div>
           <div className="input-box">
@@ -94,9 +103,9 @@ class Temperature extends Component {
                 name="temperatureSelect"
                 id="temperatureSelect"
                 className='temperature-select'
-                value={ temperatureSelect }
-                onChange={ this.handleChangeSelect }
-                >
+                value={temperatureSelect}
+                onChange={this.handleChangeSelect}
+              >
                 <option value="celsius">Celsisus</option>
                 <option value="fahrenheit">Fahrenheit</option>
               </select>
@@ -108,21 +117,20 @@ class Temperature extends Component {
                 placeholder='Insira um valor'
                 className='temperature-input'
                 id="temperatureInput"
-                value={ temperatureInput }
-                onChange={ this.handleChange }
+                value={temperatureInput}
+                onChange={this.handleChange}
               />
             </label>
           </div>
           <div className="temperature-buttons-box">
-            <button
-              className='temperature-convert-button'
-              type='button'
-              onClick={ this.convertButton }
-              disabled={temperatureInput === '' ? true : false}
-
-            >
-              Converter
-            </button>
+          <button
+            className='temperature-convert-button'
+            type='button'
+            onClick={this.convertButton}
+            disabled={ this.disabled() }
+          >
+            Converter
+          </button>
           </div>
           <div className="home-footer">
             <Link to="/" className='home-link'>

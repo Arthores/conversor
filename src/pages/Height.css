@@ -44,7 +44,7 @@
   font-size: 25px;
   width: 200px;
   height: 35px;
-  color: #000000;
+  color: #FFFFFF;
   background: none;
   border: 0;
   border-bottom: 1px solid #7c7c7c;
@@ -89,6 +89,7 @@ option {
   width: 120px;
   font-size: 25px;
   padding: 10px;
+  border: 0;
   border-radius: 25px;
   color: #000000;
   transition: ease-out 100ms;
@@ -96,6 +97,8 @@ option {
 
 .height-convert-button:disabled {
   cursor: not-allowed;
+  background-color: #191919;
+  color: #191919;
 }
 
 .height-convert-button:hover {

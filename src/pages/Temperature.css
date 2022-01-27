@@ -44,7 +44,7 @@
   font-size: 25px;
   width: 200px;
   height: 35px;
-  color: #000000;
+  color: #FFFFFF;
   background: none;
   border: 0;
   border-bottom: 1px solid #7c7c7c;
@@ -58,6 +58,9 @@
   outline: transparent;
   border-bottom: 1px solid #7e7c7c;
   transition: width ease-out 400ms;
+}
+::placeholder {
+  color: #FF0043;
 }
 
 .temperature-input:focus {
@@ -88,13 +91,17 @@ option {
   width: 120px;
   font-size: 25px;
   padding: 10px;
+  border: 0;
   border-radius: 25px;
   color: #000000;
+  background-color: #FFFFFF;
   transition: ease-out 100ms;
 }
 
 .temperature-convert-button:disabled {
   cursor: not-allowed;
+  background-color: #191919;
+  color: #191919;
 }
 
 .temperature-convert-button:hover {
