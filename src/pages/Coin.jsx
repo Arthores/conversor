@@ -71,13 +71,15 @@ class Coin extends Component {
         if(currencySelect === elemt.code && elemt.codein !== 'BRLT') {
           const calc = coinInput * Number(elemt.ask);
           const fixedValue =calc.toFixed(2);
-          return this.setState({
+          this.setState({
             convertedCoin: fixedValue,
-            pharse: true,
-            pharseNum: coinInput,
-            coinInput: '',
           })
         };
+        return this.setState({
+          pharse: true,
+          pharseNum: coinInput,
+          coinInput: '',
+        })
       });
     }
 
