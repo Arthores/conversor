@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './About.css'
 
+// Ainda farei algumas alterações na logica de renderização
+
 class About extends Component {
   render() {
     return (
@@ -16,15 +18,12 @@ class About extends Component {
               tanto algumas medidas mais buscadas no google para se converter, mais um conversor de moedas selecionadas
               para o BRL(real Brasileiro).
               <br/>
-              Usando o FrameWork React, com puro javaScript, CSS3 e um pouco de HTML
+              Usando o React, com puro javaScript, CSS3 e um pouco de HTML
               foi possível dar forma a esta aplicação de forma na qual ficasse fluida e responsiva em aparelhos mobile*.
               <br/>
               <br/>
               <br/>
               *Responsivo completamente em aparelhos com resolução igual a 1334x750 (Iphones 6, 7, 8(Normal e suas versões Plus) e X ou semelhantes);
-              <br/>
-              *Tela de Conversão de moedas se encontra inativa por problemas com a API e o cálculo feito na hora de converter;
-              <br/>
               <br/>
               <br/>
               Disponibilizarei o link do repositório do projeto para consulta do código e alterações de quem se sentir na vontade. {':)'}

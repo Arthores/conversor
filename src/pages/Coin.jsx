@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import awesomeApiAll from '../services/api';
-import {awesomeApiCurrency} from '../services/currency';
+import awesomeApiCurrency from '../services/currency';
 import './Coin.css';
 
 class Coin extends Component {
@@ -13,12 +13,16 @@ class Coin extends Component {
       currencySelect: 'USD',
       apiCallback: [],
       currency: [],
+      convertedCoin: '',
+      pharse: false,
+      pharseNum: '',
     };
 
     this.selectRenderizer = this.selectRenderizer.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeSelect = this.handleChangeSelect.bind(this);
-    // this.convertToBRL = this.convertToBRL.bind(this);
+    this.convertToBRL = this.convertToBRL.bind(this);
+    this.pharseShow = this.pharseShow.bind(this);
   }
 
   componentDidMount = async () => {
@@ -39,6 +43,7 @@ class Coin extends Component {
   handleChangeSelect(e) {
     this.setState({
       [e.target.name]: e.target.value,
+      pharse: false,
     });
   }
 
@@ -55,19 +60,53 @@ class Coin extends Component {
       ));
   }
 
+  convertToBRL() {
+    const {
+      currencySelect,
+      apiCallback,
+      coinInput
+    } = this.state;
+  
+      apiCallback.map((elemt) => {
+        if(currencySelect === elemt.code && elemt.codein !== 'BRLT') {
+          const calc = coinInput * Number(elemt.ask);
+          const fixedValue =calc.toFixed(2);
+          return this.setState({
+            convertedCoin: fixedValue,
+            pharse: true,
+            pharseNum: coinInput,
+            coinInput: '',
+          })
+        };
+      });
+    }
+
+    pharseShow() {
+      const { pharse, pharseNum, currencySelect, convertedCoin } = this.state;
+      if(pharse === true) {
+        return (
+          <p className='coin-pharse'>
+            { `${pharseNum} : ${currencySelect}` }
+            <br />
+            { `${convertedCoin} : BRL` }
+          </p>
+        )
+      }
+    };
+
   render() {
     const { coinInput } = this.state;
     return (
       <body>
         <section>
         <div className="coin-title-box">
-            <strong>
+            <strong className='coin-title'>
               Moedas
             </strong>
           </div>
           <div className="coin-dinamic-pharse">
             <span className="coin-pharse">
-              Lógica sem implementação
+              { this.pharseShow() }
             </span>
           </div>
           <div className="input-box">
@@ -95,7 +134,9 @@ class Coin extends Component {
           <div className="coin-buttons-box">
             <button
               type="button"
-              // onClick={ this.convertToBRL }
+              className='coin-convert-button'
+              onClick={ this.convertToBRL }
+              disabled={ coinInput === '' ? true : false }
             >
               Converter
             </button>
