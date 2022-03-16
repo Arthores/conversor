@@ -17,13 +17,6 @@ Status <img src="https://img.shields.io/static/v1?label=100%&message=Completo&co
 <a href="#ferramentas">
 <img src="https://img.shields.io/static/v1?label=Ferramentas&message=-&color=<COLOR" alt=""/>
 </a>
-<a href="#como-usar">
-<img src="https://img.shields.io/static/v1?label=Como Usar&message=-&color=<COLOR" alt=""/>
-</a>
-<a href="#contato">
-<img src="https://img.shields.io/static/v1?label=Contato&message=-&color=<COLOR" alt=""/>
-</a>
-
 
 ## Sobre:
 A ídeia inicial do projeto era ser apenas um conversor de moedas para o <strong>Real/BRL</strong>, mas após o desenvolvimento inicial da sua primeira versão, opitei 
